@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NovaKeepWebAPI.Models
 {
-    [Table("Characters")]
+    [Table("character")]
     public class Character
     {
         [Key]
