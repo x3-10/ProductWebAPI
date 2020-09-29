@@ -15,7 +15,7 @@ namespace ProductWebAPI.Models
 
         }
         //Dbset is a representation of the table in your db
-        public DbSet<Product>products{get;set;}
+        public DbSet<Character>characters{get;set;}
 
     }
 }

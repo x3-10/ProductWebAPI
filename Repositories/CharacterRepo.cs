@@ -21,27 +21,26 @@ namespace NovaKeepWebAPI.Repositories
         public IEnumerable<Character> GetAllCharacters()
         {
             List<Character> listResult;
-            listResult = _db.character.ToList<Character>();
+            listResult = _db.characters.ToList<Character>();
 
             return listResult;
         }
         public Character GetCharacter(int id)
         {
             Character character = new Character();
-            character = _db.character.FirstOrDefault<Character>(x => x.id == id);
+            character = _db.characters.FirstOrDefault<Character>(x => x.characterID == id);
             return character;
         }
-
         public Character InsertCharacter(Character character)
         {
-            _db.character.Add(character);
+            _db.characters.Add(character);
             _db.SaveChanges();
             return character;
         }
 
         public Character UpdateCharacter(Character characterWithChanges)
         {
-            Character character = _db.characters.FirstOrDefault(x => x.productID == productWithChanges.productID);
+            Character character = _db.characters.FirstOrDefault(x => x.characterID == characterWithChanges.characterID);
             if(character!= null)
             {
 
@@ -53,7 +52,7 @@ namespace NovaKeepWebAPI.Repositories
                 character.ability = characterWithChanges.ability;
                 character.weapon = characterWithChanges.weapon;
                 character.userAccountedId = characterWithChanges.userAccountedId;
-                _db.character.Update(character);
+                _db.characters.Update(character);
                 _db.SaveChanges();
             }
             return character;
@@ -62,11 +61,11 @@ namespace NovaKeepWebAPI.Repositories
         public Character DeleteCharacter(int id)
         {
             Character character = new Character();
-            character = _db.character.FirstOrDefault<Character>(x => x.characterID == id);
+            character = _db.characters.FirstOrDefault<Character>(x => x.characterID == id);
 
             if (character != null)
             {
-                _db.character.Remove(character);
+                _db.characters.Remove(character);
                 _db.SaveChanges();
             }
 
