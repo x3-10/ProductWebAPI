@@ -33,7 +33,7 @@ namespace NovaKeepWebAPI.Repositories
         }
         public Character InsertCharacter(Character character)
         {
-            _db.CharacterTable.Add(character);
+            _db.characters.Add(character);
             _db.SaveChanges();
             return character;
         }
