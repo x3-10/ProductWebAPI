@@ -4,11 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\ACT-Student\source\repos\NovaKeep_Character_DB\AppDbContext.cs" Link="AppDbContext.cs" />
-    <Compile Include="C:\Users\ACT-Student\source\repos\NovaKeep_Character_DB\Character.cs" Link="Character.cs" />
-    <Compile Include="C:\Users\ACT-Student\source\repos\NovaKeep_Character_DB\ICharacterRepo.cs" Link="ICharacterRepo.cs" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />

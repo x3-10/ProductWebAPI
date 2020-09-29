@@ -12,9 +12,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
-using ProductWebAPI.Models;
+using NovaKeepWebAPI.Models;
+using NovaKeepWebAPI.Repositories;
+using NovaKeepWebAPI.Interfaces;
 
-namespace ProductWebAPI
+namespace NovaKeepWebAPI
 {
     public class Startup
     {
@@ -30,10 +32,11 @@ namespace ProductWebAPI
         {
             services.AddControllers();
             // gain access ot the database via Connection String.
-            services.AddDbContext<AppDbContext>
+            services.AddDbContext<ApplicationDbContext>
                 (
-                    option => option.UseSqlServer(Configuration.GetConnectionString("APIDemo"))
+                    option => option.UseSqlServer(Configuration.GetConnectionString("NovaKeep"))
                 );
+            services.AddTransient<ICharacterRepo, CharacterRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

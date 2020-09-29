@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace NovaKeepWebAPI.Models
 {
-    public class AppDbContext:DbContext
+    public class ApplicationDbContext:DbContext
     {
         //AppDbContext is 
-        public AppDbContext(DbContextOptions<NovaKeepWebAPI.Models.AppDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
              : base(options)
         {
 
